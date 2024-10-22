@@ -6,4 +6,6 @@
     <string name="navigation_drawer_open">Open Drawer</string>
     <string name="navigation_drawer_close">Close Drawer</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="location_link"><u>Link</u></string>
+    <string name="facebook_link"><u>Facebook Link</u></string>
 </resources>
