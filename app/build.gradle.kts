@@ -1,14 +1,17 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+
+//  Firebase
+    id("com.google.gms.google-services")
 }
 
 android {
-    namespace = "com.example.tastefinder"
+    namespace = "com.example.TasteFinder"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.tastefinder"
+        applicationId = "com.example.TasteFinder"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -42,7 +45,12 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.firebase.firestore.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+//    Firebase
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics.ktx)
 }
