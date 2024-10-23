@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#A6B1E1"
+    android:background="#F296C1D7"
     tools:context=".splash.SplashScreen">
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -16,6 +16,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo2" />
+        app:srcCompat="@drawable/logo4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

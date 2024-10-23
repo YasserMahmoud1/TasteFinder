@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:text="@string/welcome_to_taste_finder"
         android:textColor="#373C57"
-        android:textSize="33sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
