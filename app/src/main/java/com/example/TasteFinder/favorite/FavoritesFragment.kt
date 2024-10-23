@@ -1,4 +1,4 @@
-package com.example.TasteFinder.favourite
+package com.example.TasteFinder.favorite
 
 import FavoritesAdapter
 import android.os.Bundle
