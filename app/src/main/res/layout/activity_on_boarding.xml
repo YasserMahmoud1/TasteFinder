@@ -6,7 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lightPurple"
+    android:background="#A6B1E1"
     tools:context=".onBoarding.OnBoardingActivity">
 
 
@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/home2"
+        android:src="@drawable/logo2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,8 +36,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/welcome_to_taste_finder"
-        android:textColor="#290D4B"
-        android:textSize="30sp"
+        android:textColor="#373C57"
+        android:textSize="33sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,60 +49,42 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="Discover the best restaurants in Fayoum, along with their menus, making it easier for you to choose your favorite meal and enjoy a great dining experience."
-        android:textColor="#401573"
+        android:textColor="#4A5175"
+        android:textStyle="bold"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerTxt" />
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="20dp"
-        android:src="@drawable/blob_left"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <Button
+        android:id="@+id/logInBtn"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#4A5175"
+        android:text="Login"
+        android:textColor="#A6B1E1"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginBottom="30dp"
-        android:src="@drawable/blob_left"
-        android:scaleX="-1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descTxt" />
 
     <Button
         android:id="@+id/signUpBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="315dp"
-        android:layout_marginBottom="30dp"
-        android:backgroundTint="@color/transparent"
-        android:text="Sign up"
-        android:textColor="@color/white"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#8B97CC"
+        android:text="Create a new account"
+        android:textColor="#4A5175"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logInBtn"
+        app:layout_constraintVertical_bias="0.988" />
 
-    <Button
-        android:id="@+id/logInBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="310dp"
-        android:layout_marginBottom="30dp"
-        android:backgroundTint="@color/transparent"
-        android:text="Login"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
