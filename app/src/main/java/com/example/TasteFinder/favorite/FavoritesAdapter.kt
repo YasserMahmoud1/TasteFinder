@@ -38,7 +38,7 @@ class FavoritesAdapter(
 
         fun bind(restaurant: Restaurant) {
             name.text = restaurant.name
-            logo.setImageResource(restaurant.imageResource)
+//            logo.setImageResource(restaurant.imageResource)
 
             // Hide favorite icon if it's a category
             if (isCategory) {

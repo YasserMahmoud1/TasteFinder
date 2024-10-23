@@ -1,196 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
+    android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:gravity="center"
+    android:padding="24dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#A6B1E1"
-    tools:context=".RegisterActivity">
+    tools:context=".register.RegisterActivity">
 
-    <!-- Register Text -->
     <TextView
-        android:id="@+id/register"
+        android:id="@+id/register_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="70dp"
         android:text="Register"
+        android:layout_gravity="start"
         android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="40sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        />
+
 
     <!-- Name Input -->
-    <EditText
-        android:id="@+id/name"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:background="@drawable/rounded_corners"
-        android:hint="Name"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"
-        android:paddingLeft="20dp"
-        android:textSize="20sp"
-        android:inputType="textPersonName"
-        android:layout_marginTop="50dp"
-        app:layout_constraintTop_toBottomOf="@+id/register"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <EditText
+            android:id="@+id/register_name"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_corners"
+            android:hint="Name"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:paddingStart="20dp"
+            android:textSize="20sp"
+            android:inputType="textPersonName"
+            android:layout_marginTop="50dp"
+            />
 
-    <!-- Email Input -->
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:background="@drawable/rounded_corners"
-        android:hint="Email"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"
-        android:paddingLeft="20dp"
-        android:textSize="20sp"
-        android:inputType="textEmailAddress"
-        app:layout_constraintTop_toBottomOf="@+id/name"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <EditText
+            android:id="@+id/register_email"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_corners"
+            android:hint="Email"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:paddingLeft="20dp"
+            android:textSize="20sp"
+            android:inputType="textEmailAddress"
+            app:layout_constraintTop_toBottomOf="@+id/name"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Phone Input -->
-    <EditText
-        android:id="@+id/phone"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:background="@drawable/rounded_corners"
-        android:hint="Phone"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"
-        android:paddingLeft="20dp"
-        android:textSize="20sp"
-        android:inputType="phone"
-        app:layout_constraintTop_toBottomOf="@+id/email"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <EditText
+            android:id="@+id/register_password"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_corners"
+            android:hint="Password"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:paddingLeft="20dp"
+            android:textSize="20sp"
+            android:inputType="textPassword"
+            app:layout_constraintTop_toBottomOf="@+id/phone"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Password Input -->
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:background="@drawable/rounded_corners"
-        android:hint="Password"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"
-        android:paddingLeft="20dp"
-        android:textSize="20sp"
-        android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@+id/phone"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <EditText
+            android:id="@+id/register_confirmPassword"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_corners"
+            android:hint="Confirm Password"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:paddingLeft="20dp"
+            android:textSize="20sp"
+            android:inputType="textPassword"
+            app:layout_constraintTop_toBottomOf="@+id/password"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Confirm Password Input -->
-    <EditText
-        android:id="@+id/confirmPassword"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:background="@drawable/rounded_corners"
-        android:hint="Confirm Password"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"
-        android:paddingLeft="20dp"
-        android:textSize="20sp"
-        android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@+id/password"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Register Button -->
-    <Button
-        android:id="@+id/registerBtn"
-        android:layout_width="170dp"
-        android:layout_height="60dp"
-        android:text="Register"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        android:backgroundTint="#424874"
-        app:layout_constraintTop_toBottomOf="@+id/confirmPassword"
-        android:layout_marginTop="40dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <!-- Register Button -->
+        <Button
+            android:id="@+id/registerBtn"
+            android:layout_width="170dp"
+            android:layout_height="60dp"
+            android:text="Register"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:backgroundTint="#424874"
+            android:layout_marginTop="32dp"
+            />
 
-    <!-- Line -->
-    <View
-        android:id="@+id/line"
-        android:layout_width="100dp"
-        android:layout_height="1dp"
-        android:layout_marginStart="40dp"
-        android:background="#424874"
-        app:layout_constraintTop_toBottomOf="@+id/registerBtn"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <!-- OR Text -->
-    <TextView
-        android:id="@+id/orText"
+    <LinearLayout
+        android:layout_margin="16dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="OR"
-        android:textColor="@android:color/white"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/registerBtn"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:gravity="center"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginEnd="4dp"
+            android:textColor="@color/darkGray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already Have An Account?"
+            android:textSize="12sp"
+            />
+        <TextView
+            android:padding="16dp"
+            android:clickable="true"
+            android:id="@+id/register_login_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#424874"
+            />
+    </LinearLayout>
 
-    <!-- Line 2 -->
-    <View
-        android:id="@+id/line2"
-        android:layout_width="100dp"
-        android:layout_height="1dp"
-        android:layout_marginEnd="40dp"
-        android:background="#424874"
-        app:layout_constraintTop_toBottomOf="@+id/registerBtn"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <!-- Facebook Icon -->
-    <ImageView
-        android:id="@+id/facebook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/white"
-        android:src="@drawable/facebook_color_svgrepo_com"
-        app:layout_constraintTop_toBottomOf="@+id/orText"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <!-- Google Icon -->
-    <ImageView
-        android:id="@+id/google"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="100dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/google_svgrepo_com"
-        app:layout_constraintTop_toBottomOf="@+id/orText"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <ImageButton
-        android:id="@+id/buttonBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="336dp"
-        android:backgroundTint="@color/transparent"
-        app:layout_constraintBottom_toTopOf="@+id/register"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/left_navigation_back_svgrepo_com" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

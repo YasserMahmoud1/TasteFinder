@@ -28,7 +28,7 @@ class TopFavoritesAdapter(private val restaurants: List<Restaurant>) : RecyclerV
         holder.restaurantName.text = restaurant.name
         holder.favoriteCount.text = restaurant.likes.toString()
 
-        holder.restaurantImage.setImageResource(restaurant.imageResource)
+//        holder.restaurantImage.setImageResource(restaurant.imageResource)
     }
 
     override fun getItemCount(): Int {

@@ -26,7 +26,7 @@ class CategoriesFragment : Fragment() {
         topFavoritesRecyclerView.layoutManager = LinearLayoutManager(
             requireContext(), LinearLayoutManager.HORIZONTAL, false
         )
-        topFavoritesRecyclerView.adapter = TopFavoritesAdapter(getTopFavorites())
+//        topFavoritesRecyclerView.adapter = TopFavoritesAdapter(getTopFavorites())
 
         // Categories RecyclerView (Grid Layout with 2 rows)
         val categoriesRecyclerView = view.findViewById<RecyclerView>(R.id.rv_categories)
@@ -37,13 +37,13 @@ class CategoriesFragment : Fragment() {
 
         return view
     }
-
-    private fun getTopFavorites(): List<Restaurant> {
-        return listOf(
-            Restaurant("Crinkle", 50, R.drawable.image_logo_crinkle),
-            Restaurant("Burgista", 30, R.drawable.image_logo_burgsta)
-        )
-    }
+//
+//    private fun getTopFavorites(): List<Restaurant> {
+//        return listOf(
+//            Restaurant("Crinkle", 50, R.drawable.image_logo_crinkle),
+//            Restaurant("Burgista", 30, R.drawable.image_logo_burgsta)
+//        )
+//    }
 
     private fun getCategories(): List<Category> {
         return listOf(

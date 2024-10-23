@@ -48,6 +48,7 @@
         android:layout_width="370dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:textAlignment="center"
         android:text="Discover the best restaurants in Fayoum, along with their menus, making it easier for you to choose your favorite meal and enjoy a great dining experience."
         android:textColor="#4A5175"
         android:textStyle="bold"

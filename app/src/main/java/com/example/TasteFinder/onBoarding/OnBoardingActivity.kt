@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
 import com.example.TasteFinder.BaseActivity
 import com.example.TasteFinder.R
 import com.example.TasteFinder.login.LoginActivity
@@ -24,11 +23,13 @@ class OnBoardingActivity : BaseActivity() {
         register.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         login.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }

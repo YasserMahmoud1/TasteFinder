@@ -52,13 +52,13 @@ class FavoritesFragment : Fragment() {
 
         // Simulate data loading
         recyclerView.postDelayed({
-            favoriteItems.addAll(
-                listOf(
-                    Restaurant("Restaurant 1", 10, R.drawable.google_svgrepo_com),
-                    Restaurant("Restaurant 2", 6, R.drawable.facebook_color_svgrepo_com),
-                    Restaurant("Restaurant 3", 9, R.drawable.heart_svgrepo_com)
-                )
-            )
+//            favoriteItems.addAll(
+////                listOf(
+////                    Restaurant("Restaurant 1", 10, R.drawable.google_svgrepo_com),
+////                    Restaurant("Restaurant 2", 6, R.drawable.facebook_color_svgrepo_com),
+////                    Restaurant("Restaurant 3", 9, R.drawable.heart_svgrepo_com)
+////                )
+//            )
 
             progressBar.visibility = View.GONE
             updateUI()

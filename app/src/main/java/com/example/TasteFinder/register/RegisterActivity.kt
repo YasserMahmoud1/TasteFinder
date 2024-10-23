@@ -3,71 +3,46 @@ package com.example.TasteFinder.register
 import android.content.Intent
 import android.os.Bundle
 import android.widget.*
-import androidx.appcompat.app.AppCompatActivity
 import com.example.TasteFinder.BaseActivity
 import com.example.TasteFinder.R
 import com.example.TasteFinder.home.HomeActivity
-import com.example.TasteFinder.onBoarding.OnBoardingActivity
+import com.example.TasteFinder.login.LoginActivity
 
 
 class RegisterActivity : BaseActivity() {
 
-    private lateinit var nameEditText: EditText
-    private lateinit var emailEditText: EditText
-    private lateinit var phoneEditText: EditText
-    private lateinit var passwordEditText: EditText
-    private lateinit var confirmPasswordEditText: EditText
-    private lateinit var registerButton: Button
-    private lateinit var facebookImageView: ImageView
-    private lateinit var googleImageView: ImageView
-    private lateinit var backButton :ImageButton
-//    private lateinit var firebaseAuth: FirebaseAuth
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+        val nameEditText: EditText = findViewById(R.id.register_name)
+        val emailEditText: EditText = findViewById(R.id.register_email)
+        val passwordEditText: EditText = findViewById(R.id.register_password)
+        val confirmPasswordEditText: EditText = findViewById(R.id.register_confirmPassword)
+        val registerButton: Button = findViewById(R.id.registerBtn)
+        val loginText: TextView = findViewById(R.id.register_login_text)
 
-        // Initialize views
-        nameEditText = findViewById(R.id.name)
-        emailEditText = findViewById(R.id.email)
-        phoneEditText = findViewById(R.id.phone)
-        passwordEditText = findViewById(R.id.password)
-        confirmPasswordEditText = findViewById(R.id.confirmPassword)
-        registerButton = findViewById(R.id.registerBtn)
-        facebookImageView = findViewById(R.id.facebook)
-        googleImageView = findViewById(R.id.google)
-        backButton = findViewById(R.id.buttonBack)
-//        firebaseAuth = FirebaseAuth.getInstance()
-
-        backButton.setOnClickListener{
-            val intent = Intent(this, OnBoardingActivity::class.java)
+        loginText.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
-        // Set onClick listener for register button
+
         registerButton.setOnClickListener {
-            registerUser()
+            registerUser(
+                nameEditText.text.toString().trim(),
+                emailEditText.text.toString().trim(),
+                passwordEditText.text.toString().trim(),
+                confirmPasswordEditText.text.toString().trim()
+            )
         }
 
-        // Set onClick listener for Facebook login
-        facebookImageView.setOnClickListener {
-            Toast.makeText(this, "Facebook Login", Toast.LENGTH_SHORT).show()
-        }
 
-        // Set onClick listener for Google login
-        googleImageView.setOnClickListener {
-            Toast.makeText(this, "Google Login", Toast.LENGTH_SHORT).show()
-        }
     }
 
-    private fun registerUser() {
-        val name = nameEditText.text.toString().trim()
-        val email = emailEditText.text.toString().trim()
-        val phone = phoneEditText.text.toString().trim()
-        val password = passwordEditText.text.toString().trim()
-        val confirmPassword = confirmPasswordEditText.text.toString().trim()
+    private fun registerUser(name: String, email: String, password: String, confirmPassword: String) {
 
-        if(name.isNotEmpty() && email.isNotEmpty() && phone.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()) {
+        if(name.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()) {
             if(password == confirmPassword) {
 
 //                firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
@@ -75,6 +50,7 @@ class RegisterActivity : BaseActivity() {
                         Toast.makeText(this, "Registration Successful!", Toast.LENGTH_SHORT).show()
                         val intent = Intent(this, HomeActivity::class.java)
                         startActivity(intent)
+                        finish()
 
 //                    }else {
 //                        Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
