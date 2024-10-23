@@ -8,10 +8,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import android.widget.ProgressBar
 import android.widget.TextView
+import com.example.TasteFinder.BaseActivity
 import com.example.TasteFinder.R
 import com.example.TasteFinder.data.Restaurant
 
-class CategoryActivity : AppCompatActivity() {
+class CategoryActivity : BaseActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var emptyView: TextView

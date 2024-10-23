@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.TasteFinder.BaseActivity
 import com.example.TasteFinder.categories.CategoriesFragment
 import com.example.TasteFinder.nearBy.NearbyFragment
 import com.example.TasteFinder.R
@@ -11,7 +12,7 @@ import com.example.TasteFinder.favourite.FavoritesFragment
 import com.example.TasteFinder.search.SearchFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : BaseActivity() {
 
     private lateinit var bottomNavigationView: BottomNavigationView
 

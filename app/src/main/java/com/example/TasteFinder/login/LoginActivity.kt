@@ -9,12 +9,13 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.TasteFinder.BaseActivity
 import com.example.TasteFinder.R
 import com.example.TasteFinder.home.HomeActivity
 import com.example.TasteFinder.onBoarding.OnBoardingActivity
 import com.google.firebase.auth.FirebaseAuth
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : BaseActivity() {
 
     private lateinit var emailEditText: EditText
     private lateinit var passwordEditText: EditText

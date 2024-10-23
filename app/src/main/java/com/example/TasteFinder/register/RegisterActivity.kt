@@ -4,12 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.TasteFinder.BaseActivity
 import com.example.TasteFinder.R
 import com.example.TasteFinder.home.HomeActivity
 import com.example.TasteFinder.onBoarding.OnBoardingActivity
 
 
-class RegisterActivity : AppCompatActivity() {
+class RegisterActivity : BaseActivity() {
 
     private lateinit var nameEditText: EditText
     private lateinit var emailEditText: EditText

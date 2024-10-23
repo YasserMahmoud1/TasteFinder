@@ -3,9 +3,10 @@ package com.example.TasteFinder.restaurantDetails
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.TasteFinder.BaseActivity
 import com.example.TasteFinder.R
 
-class RestaurantDetailsActivity : AppCompatActivity() {
+class RestaurantDetailsActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
