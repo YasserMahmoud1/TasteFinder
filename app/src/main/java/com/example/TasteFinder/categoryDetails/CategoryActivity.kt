@@ -23,7 +23,7 @@ class CategoryActivity : BaseActivity() , OnRestaurantClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_category2)
+        setContentView(R.layout.activity_category)
         recyclerView = findViewById(R.id.recyclerView)
         emptyView = findViewById(R.id.emptyView)
         progressBar = findViewById(R.id.progressBar)
