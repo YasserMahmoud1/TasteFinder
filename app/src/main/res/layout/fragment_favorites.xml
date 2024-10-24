@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Favourites"
+        android:text="Favorites"
         android:textColor="#4A5175"
         android:textSize="30sp"
         android:textStyle="bold"
