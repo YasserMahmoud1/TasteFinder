@@ -1,66 +1,52 @@
 package com.example.TasteFinder.categoryDetails
 
-import FavoritesAdapter
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import android.widget.ProgressBar
 import android.widget.TextView
 import com.example.TasteFinder.BaseActivity
 import com.example.TasteFinder.R
+import com.example.TasteFinder.data.OnRestaurantClickListener
 import com.example.TasteFinder.data.Restaurant
+import com.example.TasteFinder.restaurantDetails.RestaurantDetailsActivity
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
-class CategoryActivity : BaseActivity() {
+class CategoryActivity : BaseActivity() , OnRestaurantClickListener {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var emptyView: TextView
     private lateinit var progressBar: ProgressBar
-    private lateinit var categoryAdapter: FavoritesAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_category)
-
-        // Initialize views
+        setContentView(R.layout.activity_category2)
         recyclerView = findViewById(R.id.recyclerView)
         emptyView = findViewById(R.id.emptyView)
         progressBar = findViewById(R.id.progressBar)
-
-        // Set up RecyclerView
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        categoryAdapter = FavoritesAdapter(emptyList(), isCategory = true) // Start with empty list
+        val categoryAdapter = CategoryDetailsAdapter(listOf(), this)
+        val categoryID = intent.getStringExtra("categoryID")
+ // Start with empty list
         recyclerView.adapter = categoryAdapter
-
-        // Load data (simulated)
-        loadCategories()
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        Firebase.firestore.collection("Restaurants").whereArrayContains("Categories", categoryID ?: "").get().addOnSuccessListener {
+            documents ->
+            val restaurants = mutableListOf<Restaurant>()
+            for (document in documents) {
+                val restaurant = document.toObject(Restaurant::class.java)
+                restaurants.add(restaurant.copy(id = document.id))
+                }
+            recyclerView.adapter = CategoryDetailsAdapter(restaurants, this)
+            progressBar.visibility =View.GONE
+        }
     }
 
-    private fun loadCategories() {
-        progressBar.visibility = View.VISIBLE
-
-        // Simulate a delay for loading categories
-        recyclerView.postDelayed({
-            val categories = getDummyCategories()
-
-            progressBar.visibility = View.GONE
-            if (categories.isEmpty()) {
-                recyclerView.visibility = View.GONE
-                emptyView.visibility = View.VISIBLE
-            } else {
-                recyclerView.visibility = View.VISIBLE
-                emptyView.visibility = View.GONE
-                categoryAdapter.updateCategories(categories) // Update the adapter with new data
-            }
-        }, 2000) // Simulate a 2-second delay
-    }
-
-    private fun getDummyCategories(): List<Restaurant> {
-        // Replace with actual data fetching logic for categories
-        return listOf(
-//            Restaurant("Restaurant 1", 0, R.drawable.burger_image),
-//            Restaurant("Restaurant 2", 0, R.drawable.pasta_image),
-        )
+    override fun onRestaurantClick(restaurant: Restaurant) {
+        val intent = Intent(this, RestaurantDetailsActivity::class.java)
+        intent.putExtra("restaurant", restaurant)
+        startActivity(intent)
     }
 }

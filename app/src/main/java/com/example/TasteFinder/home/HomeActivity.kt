@@ -1,6 +1,7 @@
 package com.example.TasteFinder.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import com.example.TasteFinder.BaseActivity
@@ -19,11 +20,18 @@ class HomeActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_home)
+        val user = intent.getStringExtra("userID")
+        Log.d("HomeActivityUser", user.toString())
 
         // Set the default fragment to CategoriesFragment
         if (savedInstanceState == null) {
+
+            val categoryFragment = CategoriesFragment()
+            val bundle = Bundle()
+            bundle.putString("userID", user)
+            categoryFragment.arguments = bundle
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainer, CategoriesFragment())
+                .replace(R.id.fragmentContainer, categoryFragment)
                 .commit()
         }
 
@@ -31,26 +39,42 @@ class HomeActivity : BaseActivity() {
         bottomNavigationView.setOnItemSelectedListener { item: MenuItem ->
             when (item.itemId) {
                 R.id.nav_home -> {
+                    val categoryFragment = CategoriesFragment()
+                    val bundle = Bundle()
+                    bundle.putString("userID", user)
+                    categoryFragment.arguments = bundle
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragmentContainer, CategoriesFragment())
+                        .replace(R.id.fragmentContainer, categoryFragment)
                         .addToBackStack(null)
                         .commit()
                 }
                 R.id.nav_favorites -> {
+                    val favoritesFragment = FavoritesFragment()
+                    val bundle = Bundle()
+                    bundle.putString("userID", user)
+                    favoritesFragment.arguments = bundle
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragmentContainer, FavoritesFragment())
+                        .replace(R.id.fragmentContainer, favoritesFragment)
                         .addToBackStack(null)
                         .commit()
                 }
                 R.id.nav_search -> {
+                    val searchFragment = SearchFragment()
+                    val bundle = Bundle()
+                    bundle.putString("userID", user)
+                    searchFragment.arguments = bundle
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragmentContainer, SearchFragment())
+                        .replace(R.id.fragmentContainer, searchFragment)
                         .addToBackStack(null)
                         .commit()
                 }
                 R.id.nav_location -> {
+                    val nearbyFragment = NearbyFragment()
+                    val bundle = Bundle()
+                    bundle.putString("userID", user)
+                    nearbyFragment.arguments = bundle
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragmentContainer, NearbyFragment())
+                        .replace(R.id.fragmentContainer, nearbyFragment)
                         .addToBackStack(null)
                         .commit()
                 }

@@ -6,6 +6,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.TasteFinder.R
 import com.example.TasteFinder.data.Restaurant
+import com.squareup.picasso.Picasso
 
 class FavoritesAdapter(
     private var items: List<Restaurant>,  // Change 'val' to 'var' to allow updating the list
@@ -38,8 +39,7 @@ class FavoritesAdapter(
 
         fun bind(restaurant: Restaurant) {
             name.text = restaurant.name
-//            logo.setImageResource(restaurant.imageResource)
-
+            Picasso.get().load(restaurant.imageURL).into(logo)
             // Hide favorite icon if it's a category
             if (isCategory) {
                 favoriteIcon.visibility = View.GONE

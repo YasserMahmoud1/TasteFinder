@@ -55,4 +55,7 @@ dependencies {
 //    Firebase
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics.ktx)
+    implementation (libs.picasso)
+    implementation (libs.play.services.auth)
+
 }

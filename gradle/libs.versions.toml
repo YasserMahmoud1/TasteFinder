@@ -13,6 +13,8 @@ activity = "1.9.3"
 constraintlayout = "2.1.4"
 firebaseFirestoreKtx = "25.1.0"
 firebaseAuthKtx = "23.0.0"
+picasso = "2.8"
+playServicesAuth = "21.2.0"
 playServicesLocation = "21.3.0"
 
 [libraries]
@@ -28,6 +30,8 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx", version.ref = "firebaseFirestoreKtx" }
 firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
+picasso = { module = "com.squareup.picasso:picasso", version.ref = "picasso" }
+play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
 play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
 
 [plugins]

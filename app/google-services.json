@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "19202381610-rlk5hnf4bsamcv74gal4hq6cjb1m0pot.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.TasteFinder",
+            "certificate_hash": "644bae076874e150affb492e6e3f1778c82081c5"
+          }
+        },
+        {
           "client_id": "19202381610-51qj822pn831ldnjv0mgp1qpesf5o036.apps.googleusercontent.com",
           "client_type": 3
         }

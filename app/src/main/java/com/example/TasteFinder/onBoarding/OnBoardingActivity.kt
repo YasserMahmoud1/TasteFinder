@@ -4,12 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
-import com.example.TasteFinder.BaseActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.example.TasteFinder.R
 import com.example.TasteFinder.login.LoginActivity
 import com.example.TasteFinder.register.RegisterActivity
 
-class OnBoardingActivity : BaseActivity() {
+class OnBoardingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
